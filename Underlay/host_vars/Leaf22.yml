@@ -1,0 +1,34 @@
+hostname: Leaf22
+ip_routing: true
+spanning_tree:
+  mode: none
+loopback_interfaces:
+- name: Loopback10
+  description: Leaf22_lo10
+  shutdown: false
+  ip_address: 192.168.0.34/32
+ethernet_interfaces:
+- name: Ethernet1
+  peer: H22
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 10.2.22.1/24
+  ospf_area: 0
+- name: Ethernet2
+  peer: Edge22
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 10.252.22.2/24
+  ospf_area: 0
+  ospf_network_point_to_point: true
+
+
+
+router_ospf:
+  process_ids:
+    - id: 10
+      router_id: 192.168.0.34
+      redistribute: 
+        bgp:

@@ -1,0 +1,111 @@
+---
+type: wan_router
+wan_router:
+  defaults:
+    loopback_ipv4_pool: 10.99.101.0/24
+    vtep_loopback_ipv4_pool: 10.99.102.0/24
+    cv_pathfinder_region: REGION1
+    filter:
+      always_include_vrfs_in_tenants: [TENANT_A]
+  node_groups:
+    - group: SITE11
+      cv_pathfinder_site: SITE11
+      wan_ha:
+        enabled: true
+        ha_interfaces: [Ethernet1]
+        ha_ipv4_pool: 10.10.10.0/24
+      nodes:
+        - name: Edge10
+          id: 10
+          cv_pathfinder_site: SITE11
+          l3_interfaces:
+            - name: Ethernet4
+              ip_address: 192.10.15.1/24
+              wan_carrier: mpls
+              flow_tracking:
+                enabled: true
+            - name: Ethernet5
+              ip_address: 192.10.16.1/24
+              peer_ip: 192.10.16.2
+              wan_carrier: internet
+              flow_tracking:
+                enabled: true
+              cv_pathfinder_internet_exit: 
+                policies:
+                  - name: DEFAULT_INTERNET_EXIT
+        - name: Edge11
+          id: 11
+          cv_pathfinder_site: SITE11
+          l3_interfaces:
+            - name: Ethernet4
+              ip_address: 192.11.15.1/24
+              wan_carrier: mpls
+              flow_tracking:
+                enabled: true
+            - name: Ethernet5
+              ip_address: 192.11.16.1/24
+              peer_ip: 192.11.16.2
+              wan_carrier: internet
+              flow_tracking:
+                enabled: true
+              cv_pathfinder_internet_exit: 
+                policies:
+                  - name: DEFAULT_INTERNET_EXIT
+  nodes:
+    - name: Edge12
+      id: 12
+      cv_pathfinder_region: REGION1
+      cv_pathfinder_site: SITE12
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 192.12.15.1/24
+          wan_carrier: mpls
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: 192.12.16.1/24
+          peer_ip: 192.12.16.2
+          wan_carrier: internet
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT
+    - name: Edge13
+      id: 13
+      cv_pathfinder_region: REGION1
+      cv_pathfinder_site: SITE13
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 192.13.15.1/24
+          wan_carrier: mpls
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: 192.13.16.1/24
+          peer_ip: 192.13.16.2
+          wan_carrier: internet
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT
+    - name: Edge14
+      id: 14
+      cv_pathfinder_region: REGION1
+      cv_pathfinder_site: SITE14
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 192.14.15.1/24
+          wan_carrier: mpls
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: 192.14.16.1/24
+          peer_ip: 192.14.16.2
+          wan_carrier: internet
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT

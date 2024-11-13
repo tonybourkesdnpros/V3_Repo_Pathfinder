@@ -1,0 +1,96 @@
+---
+
+type: wan_router
+wan_router:
+  defaults:
+    cv_pathfinder_transit_mode: zone
+    loopback_ipv4_pool: 10.99.201.0/24
+    vtep_loopback_ipv4_pool: 10.99.202.0/24
+    cv_pathfinder_region: REGION2
+    filter:
+      always_include_vrfs_in_tenants: [TENANT_A]
+  nodes:
+    - name: Edge20
+      id: 21
+      cv_pathfinder_region: REGION2
+      cv_pathfinder_site: SITE21
+      l3_interfaces:
+        - name: Ethernet4
+          ip_address: 172.16.20.2/24
+          wan_carrier: mpls_r2
+          flow_tracking:
+            enabled: true
+        - name: Ethernet5
+          ip_address: dhcp
+          wan_carrier: internet
+          dhcp_accept_default_route: true
+          peer_ip: 22.22.20.1
+          dhcp_ip: 22.22.20.2
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT
+    - name: Edge22
+      id: 22
+      cv_pathfinder_region: REGION2
+      cv_pathfinder_site: SITE22
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 172.16.22.2/24
+          wan_carrier: mpls_r2
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: dhcp
+          wan_carrier: internet
+          dhcp_accept_default_route: true
+          peer_ip: 22.22.22.1
+          dhcp_ip: 22.22.22.2
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT
+    - name: Edge23
+      id: 23
+      cv_pathfinder_region: REGION2
+      cv_pathfinder_site: SITE23
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 172.16.23.2/24
+          wan_carrier: mpls_r2
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: dhcp
+          wan_carrier: internet
+          dhcp_accept_default_route: true
+          peer_ip: 22.22.23.1
+          dhcp_ip: 22.22.23.2
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT
+    - name: Edge24
+      id: 24
+      cv_pathfinder_region: REGION2
+      cv_pathfinder_site: SITE24
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 172.16.24.2/24
+          wan_carrier: mpls_r2
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: dhcp
+          wan_carrier: internet
+          peer_ip: 22.22.24.1
+          dhcp_ip: 22.22.24.2
+          dhcp_accept_default_route: true
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT

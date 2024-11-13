@@ -1,0 +1,41 @@
+hostname: Edge21
+ip_routing: true
+spanning_tree:
+  mode: none
+vrfs:
+  - name: VRF_A
+    ip_routing: true
+loopback_interfaces:
+  - name: Loopback10
+    description: Edge-21_lo10
+    shutdown: false
+    ip_address: 192.168.0.21/32
+ethernet_interfaces:
+# Disable everything
+
+  - name: Ethernet1
+    peer: Edge20
+    type: routed
+    shutdown: true
+    mtu: 1500
+  - name: Ethernet2
+    peer: Edge20
+    type: routed
+    shutdown: true
+    mtu: 1500
+
+  - name: Ethernet6
+    peer: Leaf22
+    type: routed
+    shutdown: true
+
+  - name: Ethernet4
+    peer: R2-PE2
+    type: routed
+    shutdown: true
+    mtu: 1500
+  - name: Ethernet5
+    peer: ISP-2
+    type: routed
+    shutdown: true
+    mtu: 1500

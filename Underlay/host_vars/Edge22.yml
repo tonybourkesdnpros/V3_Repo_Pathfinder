@@ -1,0 +1,71 @@
+hostname: Edge22
+ip_routing: true
+spanning_tree:
+  mode: none
+vrfs:
+  - name: VRF_A
+    ip_routing: true
+loopback_interfaces:
+  - name: Loopback10
+    description: Edge-22_lo10
+    shutdown: false
+    ip_address: 192.168.0.22/32
+ethernet_interfaces:
+# LAN Connections
+
+  - name: Ethernet1
+    peer: Leaf22
+    type: routed
+    shutdown: false
+    mtu: 1500
+    vrf: VRF_A
+    ip_address: 10.252.22.1/24
+    ospf_area: 0
+    ospf_network_point_to_point: true
+
+# WAN Connections
+
+  - name: Ethernet2
+    peer: R2-PE2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 172.16.22.2/24
+
+  - name: Ethernet3
+    peer: ISP-2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: dhcp
+
+
+router_bgp:
+  as: 65000
+  router_id: 192.168.0.22
+  neighbors:
+    - ip_address: 172.16.22.1
+      remote_as:  65202
+      description: R2-PE2
+
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 172.16.22.1
+        activate: true
+  redistribute_routes:
+    - source_protocol: connected
+  vrfs:
+    - name: VRF_A
+      redistribute_routes:
+        - source_protocol: connected
+        - source_protocol: ospf
+
+router_ospf:
+  process_ids:
+    - id: 10
+      router_id: 192.168.0.22
+      vrf: VRF_A
+      redistribute:
+        bgp:
+      default_information_originate:
+        always: true

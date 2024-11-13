@@ -1,0 +1,76 @@
+hostname: Edge12
+ip_routing: true
+spanning_tree:
+  mode: none
+vrfs:
+  - name: VRF_A
+    ip_routing: true
+
+loopback_interfaces:
+  - name: Loopback10
+    description: Edge-12_lo10
+    shutdown: false
+    ip_address: 192.168.0.12/32
+
+# LAN Connection
+ethernet_interfaces:
+  - name: Ethernet1
+    vrf: VRF_A
+    peer: Leaf12
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 10.251.12.1/24
+    ospf_area: 0
+    ospf_network_point_to_point: true
+
+# WAN Connections
+
+  - name: Ethernet2
+    peer: R1-PE1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 172.16.12.2/24
+  - name: Ethernet3
+    peer: ISP-1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.12.2/24
+
+router_bgp:
+  as: 65000
+  router_id: 192.168.0.12
+  neighbors:
+    - ip_address: 172.16.12.1
+      remote_as:  65102
+      description: R1_MPLS
+    - ip_address: 11.11.12.1
+      remote_as:  65103
+      description: ISP-1
+
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 172.16.12.1
+        activate: true
+      - ip_address: 11.11.12.1
+        activate: true
+    networks: 
+  redistribute_routes:
+    - source_protocol: connected
+  vrfs:
+    - name: VRF_A
+      redistribute_routes:
+        - source_protocol: ospf
+        - source_protocol: connected
+
+router_ospf:
+  process_ids:
+    - id: 10
+      router_id: 192.168.0.12
+      vrf: VRF_A
+      default_information_originate:
+        always: true
+      redistribute:
+        bgp:

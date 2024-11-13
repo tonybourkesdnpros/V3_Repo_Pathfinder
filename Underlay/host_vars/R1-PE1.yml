@@ -1,0 +1,102 @@
+hostname: R1-PE1
+ip_routing: true
+spanning_tree:
+  mode: none
+loopback_interfaces:
+- name: Loopback10
+  description: R2-PE2_lo10
+  shutdown: false
+  ip_address: 192.168.0.15/32
+ethernet_interfaces:
+- name: Ethernet1
+  peer: Transit1
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.51.1/24
+- name: Ethernet2
+  peer: Transit2
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.52.1/24
+- name: Ethernet3
+  peer: Pathfinder1
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.1.1/24
+- name: Ethernet4
+  peer: Pathfinder2
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.2.1/24
+- name: Ethernet5
+  peer: Edge10
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.10.1/24
+- name: Ethernet6
+  peer: Edge11
+  type: routed
+  shutdown: true
+  mtu: 1500
+- name: Ethernet7
+  peer: Edge12
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.12.1/24
+- name: Ethernet8
+  peer: Edge13
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.13.1/24
+- name: Ethernet9
+  peer: Edge14
+  type: routed
+  shutdown: false
+  mtu: 1500
+  ip_address: 172.16.14.1/24
+router_bgp:
+  as: 65102
+  router_id: 192.168.0.15
+  neighbors:
+    - ip_address: 172.16.10.2
+      remote_as:  65000
+      description: Edge10
+    - ip_address: 172.16.12.2
+      remote_as:  65000
+      description: Edge12
+    - ip_address: 172.16.13.2
+      remote_as:  65000
+      description: Edge13
+    - ip_address: 172.16.14.2
+      remote_as:  65000
+      description: Edge14
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 172.16.10.2
+        activate: true
+        prefix_list_in: MPLS_IN
+      - ip_address: 172.16.12.2
+        activate: true
+        prefix_list_in: MPLS_IN
+      - ip_address: 172.16.13.2
+        activate: true
+        prefix_list_in: MPLS_IN
+      - ip_address: 172.16.14.2
+        activate: true
+        prefix_list_in: MPLS_IN
+    redistribute_routes:
+    - source_protocol: connected
+  
+  
+prefix_lists:
+  - name: MPLS_IN
+    sequence_numbers:
+      - sequence: 10
+        action: permit 172.16.0.0/16 eq 24

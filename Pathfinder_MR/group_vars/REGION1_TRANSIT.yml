@@ -1,0 +1,52 @@
+---
+type: wan_router
+
+wan_router:
+  defaults:
+    cv_pathfinder_transit_mode: region
+    cv_pathfinder_region: REGION1
+    filter:
+      always_include_vrfs_in_tenants: [TENANT_A]
+  nodes:
+    - name: Transit1
+      id: 51
+      cv_pathfinder_site: TRANSIT1
+      loopback_ipv4_pool: 10.99.101.0/24
+      vtep_loopback_ipv4_pool: 10.99.102.0/24
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 172.16.51.2/24
+          wan_carrier: mpls_r1
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: 11.11.51.2/24
+          peer_ip: 11.11.51.1
+          wan_carrier: internet
+          # flow_tracking:
+          #   enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT
+    - name: Transit2
+      id: 52
+      cv_pathfinder_site: TRANSIT1
+      loopback_ipv4_pool: 10.99.101.0/24
+      vtep_loopback_ipv4_pool: 10.99.102.0/24
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 11.11.52.2/24
+          wan_carrier: internet
+          peer_ip: 11.11.52.1
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT          
+        - name: Ethernet3
+          ip_address: 172.16.52.2/24
+          wan_carrier: mpls_r1
+          # flow_tracking:
+          #   enabled: true
+
+

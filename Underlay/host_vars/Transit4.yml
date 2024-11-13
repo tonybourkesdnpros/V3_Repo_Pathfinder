@@ -1,0 +1,31 @@
+hostname: Transit4
+ip_routing: true
+spanning_tree:
+  mode: none
+loopback_interfaces:
+- name: Loopback10
+  description: Region2_P21_lo10
+  shutdown: false
+  ip_address: 192.168.0.54/32
+ethernet_interfaces:
+  - name: Ethernet2
+    peer: ISP-2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.54.2/24
+  - name: Ethernet3
+    peer: R2-PE2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 172.16.54.2/24
+
+
+static_routes:
+  - vrf: default
+    destination_address_prefix: 0.0.0.0/0
+    gateway: 22.22.54.1
+  - vrf: default
+    destination_address_prefix: 172.16.0.0/12
+    gateway: 172.16.54.1

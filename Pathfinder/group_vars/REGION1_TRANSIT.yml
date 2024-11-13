@@ -1,0 +1,30 @@
+---
+type: wan_router
+
+wan_router:
+  defaults:
+    cv_pathfinder_transit_mode: region
+    cv_pathfinder_region: REGION1
+    filter:
+      always_include_vrfs_in_tenants: [TENANT_A]
+  nodes:
+    - name: P10
+      id: 61
+      cv_pathfinder_site: REGION1_TRANSIT
+      loopback_ipv4_pool: 10.99.101.0/24
+      vtep_loopback_ipv4_pool: 10.99.102.0/24
+      l3_interfaces:
+        - name: Ethernet2
+          ip_address: 192.15.51.2/24
+          wan_carrier: mpls
+          flow_tracking:
+            enabled: true
+        - name: Ethernet3
+          ip_address: 192.16.51.2/24
+          peer_ip: 192.16.51.1
+          wan_carrier: internet
+          flow_tracking:
+            enabled: true
+          cv_pathfinder_internet_exit: 
+            policies:
+              - name: DEFAULT_INTERNET_EXIT

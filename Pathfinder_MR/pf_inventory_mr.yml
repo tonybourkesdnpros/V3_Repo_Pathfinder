@@ -1,0 +1,73 @@
+---
+all:
+  hosts: 
+    cvaas: 
+      ansible_host: www.cv-prod-us-central1-c.arista.io
+      ansible_user: cvaas
+      ansible_httpapi_use_ssl: True
+      ansible_httpapi_validate_certs: False
+      ansible_network_os: eos
+      ansible_httpapi_port: 443
+  children:
+    PF_NETWORK:
+      children:
+        TENANT_AVTS:
+          children:
+            REGIONS:
+              children:
+                REGION1:
+                  children:
+                    REGION1_PATHFINDERS:
+                      hosts:
+                        Pathfinder1:
+                          ansible_host: 192.168.0.71
+                        Pathfinder2:
+                          ansible_host: 192.168.0.72
+                    REGION1_EDGE:
+                      children:
+                        SITE11:
+                          hosts:
+                            Edge10:
+                        SITE12:
+                          hosts: 
+                            Edge12:
+                        SITE13:
+                          hosts:
+                            Edge13:
+                        SITE14:
+                          hosts:
+                            Edge14:
+                        REGION1_TRANSIT:
+                          hosts:
+                            Transit1:
+                              ansible_host: 192.168.0.51
+                            Transit2:
+                              ansible_host: 192.168.0.52
+                REGION2:
+                  children:
+                    REGION2_PATHFINDERS:
+                      hosts:
+                        Pathfinder3:
+                          ansible_host: 192.168.0.73
+                        Pathfinder4:
+                          ansible_host: 192.168.0.74
+                    REGION2_EDGE:
+                      children:
+                        SITE21:
+                          hosts:
+                            Edge20:
+                        SITE22:
+                          hosts: 
+                            Edge22:
+                        SITE23:
+                          hosts:
+                            Edge23:
+                        SITE24:
+                          hosts:
+                            Edge24:
+                        REGION2_TRANSIT:
+                          hosts:
+                            Transit3:
+                              ansible_host: 192.168.0.53
+                            Transit4:
+                              ansible_host: 192.168.0.54

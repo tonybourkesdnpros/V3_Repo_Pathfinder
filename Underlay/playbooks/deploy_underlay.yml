@@ -1,0 +1,24 @@
+---
+- name: Deploy region configlets
+  hosts: cvaas
+  vars_files:
+    - ../vars/CVP_model.yml
+  tasks:
+    - name: Upload region configlets
+      arista.cvp.cv_configlet_v3:
+        configlets: "{{ cvp_configlets }}"
+    - name: Apply region configlets
+      arista.cvp.cv_device_v3:
+        devices: "{{ cvp_devices }}"
+- name: Deploy MPLS fabric to CVaaS
+  hosts: cvaas
+  tasks:
+    - name: Provision CVaaS with AVD Generated MPLS Configs
+      ansible.builtin.import_role:
+        name: arista.avd.eos_config_deploy_cvp
+      vars:
+        container_root: 'MPLS_FABRIC'
+        configlets_prefix: 'MPLS'
+        state: present
+        execute_tasks: false # Set to true if you want the change to be made without a change control approval
+        cv_collection: v3

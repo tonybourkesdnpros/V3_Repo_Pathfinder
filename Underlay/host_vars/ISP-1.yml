@@ -1,0 +1,127 @@
+hostname: ISP-1
+ip_routing: true
+
+spanning_tree:
+  mode: none
+
+loopback_interfaces:
+  - name: Loopback10
+    description: ISP_lo10
+    shutdown: false
+    ip_address: 192.168.0.16/32
+    
+
+ethernet_interfaces:
+  - name: Ethernet1
+    peer: Transit1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.51.1/24
+  - name: Ethernet2
+    peer: Transit2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.52.1/24
+  - name: Ethernet3
+    peer: Pathfinder1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.1.1/24
+  - name: Ethernet4
+    peer: Pathfinder2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.2.1/24
+  - name: Ethernet5
+    peer: Edge10
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.10.1/24
+  - name: Ethernet6
+    peer: Edge11
+    type: routed
+    shutdown: true
+    mtu: 1500
+  - name: Ethernet7
+    peer: Edge12
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.12.1/24
+  - name: Ethernet8
+    peer: Edge13
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.13.1/24
+  - name: Ethernet9
+    peer: Edge14
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.14.1/24
+  - name: Ethernet10
+    peer: ISP-3
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 3.3.1.2/24
+router_bgp:
+  as: 65103
+  router_id: 192.168.0.16
+  neighbors:
+    - ip_address: 11.11.10.2
+      remote_as:  65000
+      description: Edge10
+      default_originate:
+        enabled: true
+    - ip_address: 11.11.12.2
+      remote_as:  65000
+      description: Edge12
+      default_originate:
+        enabled: true
+    - ip_address: 11.11.13.2
+      remote_as:  65000
+      description: Edge13
+      default_originate:
+        enabled: true
+    - ip_address: 11.11.14.2
+      remote_as:  65000
+      description: Edge14
+      default_originate:
+        enabled: true
+    - ip_address: 3.3.1.1
+      remote_as: 65002
+      description: ISP-3
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 11.11.10.2
+        activate: true
+        prefix_list_in: INTERNET
+      - ip_address: 11.11.12.2
+        activate: true
+        prefix_list_in: INTERNET
+      - ip_address: 11.11.13.2
+        activate: true
+        prefix_list_in: INTERNET
+      - ip_address: 11.11.14.2
+        activate: true
+        prefix_list_in: INTERNET
+      - ip_address: 3.3.1.1
+    redistribute_routes:
+      - source_protocol: connected
+
+
+prefix_lists:
+  - name: INTERNET
+    sequence_numbers:
+      - sequence: 10
+        action: permit 11.11.0.0/16 eq 24
+
+
+

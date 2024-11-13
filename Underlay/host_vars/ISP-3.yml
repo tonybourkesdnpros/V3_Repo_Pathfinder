@@ -1,0 +1,43 @@
+hostname: ISP-3
+ip_routing: true
+spanning_tree:
+  mode: none
+loopback_interfaces:
+  - name: Loopback10
+    description: ISP-3_lo10
+    shutdown: false
+    ip_address: 192.168.0.75/32
+  - name: Loopback111
+    description: Internet_Host
+    ip_address: 1.1.1.1/32
+ethernet_interfaces:
+  - name: Ethernet7
+    peer: ISP-1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 3.3.1.1/24
+  - name: Ethernet8
+    peer: ISP-2
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 3.3.2.1/24
+router_bgp:
+  as: 65002
+  router_id: 192.168.0.75
+  neighbors:
+    - ip_address: 3.3.1.2
+      description: ISP-1
+      remote_as: 65103
+    - ip_address: 3.3.2.2
+      description: ISP-2
+      remote_as: 65203
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 3.3.1.2
+        activate: true
+      - ip_address: 3.3.2.2
+        activate: true
+    networks:
+      - prefix: 1.1.1.1/32

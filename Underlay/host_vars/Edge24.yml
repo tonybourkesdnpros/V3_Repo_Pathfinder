@@ -1,0 +1,44 @@
+hostname: Edge24
+ip_routing: true
+spanning_tree:
+  mode: none
+vrfs:
+- name: VRF_A
+  ip_routing: true
+loopback_interfaces:
+  - name: Loopback10
+    description: Edge-24_lo10
+    shutdown: false
+    ip_address: 192.168.0.24/32
+
+ethernet_interfaces:
+#LAN
+  - name: Ethernet1
+    peer: H24
+    type: routed
+    shutdown: false
+    mtu: 1500
+    vrf: VRF_A
+    ip_address: 10.2.24.1/24
+
+#WAN 
+  - name: Ethernet2
+    peer: R1-PE1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 172.16.24.2/24
+
+
+router_bgp:
+  as: 65000
+  router_id: 192.168.0.24
+  neighbors:
+    - ip_address: 172.16.24.1
+      remote_as:  65202
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 172.16.24.1
+        activate: true
+  redistribute_routes:
+    - source_protocol: connected

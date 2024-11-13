@@ -1,0 +1,140 @@
+hostname: ISP-2
+ip_routing: true
+spanning_tree:
+  mode: none
+
+dhcp_servers:
+  - vrf: default
+    dns_servers_ipv4:
+      - 192.168.0.1
+    subnets:
+      - subnet: 22.22.20.0/24
+        ranges:
+          - start: 22.22.20.10
+            end: 22.22.20.20
+        name: To_Edge_20
+        default_gateway: 22.22.20.1
+        dns_servers:
+          - 192.168.0.1
+
+      - subnet: 22.22.21.0/24
+        ranges:
+          - start: 22.22.21.10
+            end: 22.22.21.20
+        name: To_Edge_21
+        default_gateway: 22.22.21.1
+        dns_servers:
+          - 192.168.0.1        
+
+      - subnet: 22.22.22.0/24
+        ranges:
+          - start: 22.22.22.10
+            end: 22.22.22.20
+        name: To_Edge_22
+        default_gateway: 22.22.22.1
+        dns_servers:
+          - 192.168.0.1
+      - subnet: 22.22.23.0/24
+        ranges:
+          - start: 22.22.23.10
+            end: 22.22.23.20
+        name: To_Edge_23
+        default_gateway: 22.22.23.1
+        dns_servers:
+          - 192.168.0.1
+
+      - subnet: 22.22.24.0/24
+        ranges:
+          - start: 22.22.24.10
+            end: 22.22.24.20
+        name: To_Edge_24
+        default_gateway: 22.22.24.1
+        dns_servers:
+          - 192.168.0.1
+
+loopback_interfaces:
+  - name: Loopback10
+    description: ISP_lo10
+    shutdown: false
+    ip_address: 192.168.0.26/32
+ethernet_interfaces:
+  - name: Ethernet1
+    peer: Transit3
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.53.1/24
+  - name: Ethernet2
+    peer: Transit4
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.54.1/24
+  - name: Ethernet3
+    peer: Pathfinder3
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.3.1/24
+  - name: Ethernet4
+    peer: Pathfinder4
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.4.1/24
+  - name: Ethernet5
+    dhcp_server_ipv4: true
+    peer: Edge20
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.20.1/24
+  - name: Ethernet6
+    dhcp_server_ipv4: true
+    peer: Edge21
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.21.1/24
+  - name: Ethernet7
+    dhcp_server_ipv4: true
+    peer: Edge22
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.22.1/24
+  - name: Ethernet8
+    dhcp_server_ipv4: true
+    peer: Edge23
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.23.1/24
+  - name: Ethernet9
+    dhcp_server_ipv4: true
+    peer: Edge24
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 22.22.24.1/24
+  - name: Ethernet10
+    peer: ISP-3
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 3.3.2.2/24
+router_bgp:
+  as: 65203
+  router_id: 192.168.0.26
+  neighbors:
+    - ip_address: 3.3.2.1
+      remote_as:  65002
+      description: IPS-3
+  address_family_ipv4:
+    neighbors:
+      - ip_address: 3.3.2.1
+        activate: true
+    redistribute_routes:
+      - source_protocol: connected
+
+

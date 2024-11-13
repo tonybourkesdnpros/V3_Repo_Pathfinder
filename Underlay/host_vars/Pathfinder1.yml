@@ -1,0 +1,35 @@
+hostname: Pathfinder1
+ip_routing: true
+spanning_tree:
+  mode: none
+loopback_interfaces:
+  - name: Loopback10
+    description: RR1_lo10
+    shutdown: false
+    ip_address: 192.168.0.71/32
+ethernet_interfaces:
+  - name: Ethernet1
+    peer: RR2
+    type: routed
+    shutdown: true
+    mtu: 1500
+  - name: Ethernet2
+    peer: R1-PE1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 172.16.1.2/24
+  - name: Ethernet3
+    peer: ISP-1
+    type: routed
+    shutdown: false
+    mtu: 1500
+    ip_address: 11.11.1.2/24
+
+static_routes:
+  - vrf: default
+    destination_address_prefix: 0.0.0.0/0
+    gateway: 11.11.1.1
+  - vrf: default
+    destination_address_prefix: 172.16.0.0/12
+    gateway: 172.16.1.1
