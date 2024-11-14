@@ -130,6 +130,8 @@ ethernet_interfaces:
   shutdown: false
   type: routed
   description: mpls_r1
+  flow_tracker:
+    hardware: FLOW-TRACKER
 loopback_interfaces:
 - name: Loopback0
   description: Router_ID

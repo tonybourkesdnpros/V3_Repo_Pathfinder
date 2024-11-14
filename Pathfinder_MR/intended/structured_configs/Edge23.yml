@@ -388,7 +388,7 @@ ip_access_lists:
   - sequence: 10
     action: deny
     protocol: ip
-    source: 22.22.23.2
+    source: 22.22.23.10
     destination: any
   - sequence: 20
     action: permit

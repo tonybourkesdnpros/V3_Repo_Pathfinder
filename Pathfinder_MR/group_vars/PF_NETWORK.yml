@@ -6,6 +6,7 @@ fabric_name: PF_NETWORK
 # This is needed for virtual/containerized EOS
 bgp_update_wait_install: false
 custom_structured_configuration_prefix: "custom_"
+use_anta: true
 
 # Can also be just autovpn
 wan_mode: cv-pathfinder
@@ -37,31 +38,44 @@ cv_pathfinder_regions:
     sites:
       - name: SITE11
         id: 101
+        location: Perris, CA
       - name: SITE12
         id: 102
+        location: Los Angeles, CA
       - name: SITE13
         id: 103
+        location: Chicago, IL
       - name: SITE14
         id: 104
-      - name: TRANSIT1
-        id: 199
+        location: New York, NY
       - name: SITE1_R1_PF
         id: 198
+        location: Herndon, VA
+      - name: TRANSIT1
+        id: 199
+        location: Austin, Texas
+
   - name: REGION2
     id: 2
     sites:
       - name: SITE21
         id: 201
+        location: Dublin, Ireland
       - name: SITE22
         id: 202
+        location: Paris, France
       - name: SITE23
         id: 203
+        location: Tallinn, Estonia
       - name: SITE24
         id: 204
+        location: Berlin, Germany
       - name: TRANSIT2
         id: 299
+        location: Ljubljana, Slovenia
       - name: SITE1_R2_PF
         id: 298
+        location: Riga, Latvia
 
 wan_ipsec_profiles:
   control_plane:

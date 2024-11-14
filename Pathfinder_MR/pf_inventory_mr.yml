@@ -10,6 +10,16 @@ all:
       ansible_httpapi_port: 443
   children:
     PF_NETWORK:
+      vars:
+        ansible_user: arista
+        ansible_network_os: eos
+        ansible_password: aristapvf7
+        ansible_connection: httpapi
+        ansible_httpapi_use_ssl: True
+        ansible_httpapi_validate_certs: False
+        ansible_httpapi_port: 443
+        ansible_become: true
+        ansible_become_method: enable 
       children:
         TENANT_AVTS:
           children:

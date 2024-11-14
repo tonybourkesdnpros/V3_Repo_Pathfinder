@@ -128,6 +128,8 @@ ethernet_interfaces:
   shutdown: false
   type: routed
   description: internet
+  flow_tracker:
+    hardware: FLOW-TRACKER
   ip_nat:
     service_profile: NAT-IE-DIRECT
 loopback_interfaces:

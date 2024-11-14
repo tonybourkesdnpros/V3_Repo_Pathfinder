@@ -835,7 +835,7 @@ ip extcommunity-list ECL-EVPN-SOO permit soo 10.99.201.24:204
 ```eos
 !
 ip access-list ACL-NAT-IE-DIRECT
-   10 deny ip host 22.22.24.2 any
+   10 deny ip host 22.22.24.10 any
    20 permit ip any any
 ```
 

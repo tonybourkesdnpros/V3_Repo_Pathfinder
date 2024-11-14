@@ -25,7 +25,7 @@ wan_router:
           wan_carrier: internet
           dhcp_accept_default_route: true
           peer_ip: 22.22.20.1
-          dhcp_ip: 22.22.20.2
+          dhcp_ip: 22.22.20.10
           flow_tracking:
             enabled: true
           cv_pathfinder_internet_exit: 
@@ -46,7 +46,7 @@ wan_router:
           wan_carrier: internet
           dhcp_accept_default_route: true
           peer_ip: 22.22.22.1
-          dhcp_ip: 22.22.22.2
+          dhcp_ip: 22.22.22.10
           flow_tracking:
             enabled: true
           cv_pathfinder_internet_exit: 
@@ -67,7 +67,7 @@ wan_router:
           wan_carrier: internet
           dhcp_accept_default_route: true
           peer_ip: 22.22.23.1
-          dhcp_ip: 22.22.23.2
+          dhcp_ip: 22.22.23.10
           flow_tracking:
             enabled: true
           cv_pathfinder_internet_exit: 
@@ -87,7 +87,7 @@ wan_router:
           ip_address: dhcp
           wan_carrier: internet
           peer_ip: 22.22.24.1
-          dhcp_ip: 22.22.24.2
+          dhcp_ip: 22.22.24.10
           dhcp_accept_default_route: true
           flow_tracking:
             enabled: true

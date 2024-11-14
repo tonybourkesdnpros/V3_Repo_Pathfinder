@@ -372,6 +372,7 @@ metadata:
     vtep_ip: 10.99.102.3
     region: REGION2
     site: SITE1_R2_PF
+    address: Riga, Latvia
     interfaces:
     - name: Ethernet2
       carrier: mpls_r2
@@ -400,16 +401,28 @@ metadata:
         sites:
         - name: SITE11
           id: 101
+          location:
+            address: Perris, CA
         - name: SITE12
           id: 102
+          location:
+            address: Los Angeles, CA
         - name: SITE13
           id: 103
+          location:
+            address: Chicago, IL
         - name: SITE14
           id: 104
-        - name: TRANSIT1
-          id: 199
+          location:
+            address: New York, NY
         - name: SITE1_R1_PF
           id: 198
+          location:
+            address: Herndon, VA
+        - name: TRANSIT1
+          id: 199
+          location:
+            address: Austin, Texas
     - name: REGION2
       id: 2
       zones:
@@ -418,16 +431,28 @@ metadata:
         sites:
         - name: SITE21
           id: 201
+          location:
+            address: Dublin, Ireland
         - name: SITE22
           id: 202
+          location:
+            address: Paris, France
         - name: SITE23
           id: 203
+          location:
+            address: Tallinn, Estonia
         - name: SITE24
           id: 204
+          location:
+            address: Berlin, Germany
         - name: TRANSIT2
           id: 299
+          location:
+            address: Ljubljana, Slovenia
         - name: SITE1_R2_PF
           id: 298
+          location:
+            address: Riga, Latvia
     vrfs:
     - name: default
       vni: 101

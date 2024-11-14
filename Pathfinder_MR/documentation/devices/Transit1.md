@@ -149,7 +149,7 @@ management security
 
 | Tracker Name | Record Export On Inactive Timeout | Record Export On Interval | Number of Exporters | Applied On |
 | ------------ | --------------------------------- | ------------------------- | ------------------- | ---------- |
-| FLOW-TRACKER | 70000 | 300000 | 1 | Dps1<br>Ethernet2 |
+| FLOW-TRACKER | 70000 | 300000 | 1 | Dps1<br>Ethernet2<br>Ethernet3 |
 
 ##### Exporters Summary
 
@@ -346,6 +346,7 @@ interface Ethernet3
    description internet
    no shutdown
    no switchport
+   flow tracker hardware FLOW-TRACKER
    ip address 11.11.51.2/24
    ip nat service-profile NAT-IE-DIRECT
 ```

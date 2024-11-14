@@ -1,0 +1,323 @@
+[
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "failure",
+    "messages": [
+      "Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}]"
+    ],
+    "custom_field": "BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyEnvironmentCooling",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies the status of power supply fans and all fan trays.",
+    "result": "skipped",
+    "messages": [
+      "VerifyEnvironmentCooling test is not supported on vEOS-lab."
+    ],
+    "custom_field": "Accepted States: 'ok'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyEnvironmentPower",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies the power supplies status.",
+    "result": "skipped",
+    "messages": [
+      "VerifyEnvironmentPower test is not supported on vEOS-lab."
+    ],
+    "custom_field": "Accepted States: 'ok'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyTemperature",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies the device temperature.",
+    "result": "skipped",
+    "messages": [
+      "VerifyTemperature test is not supported on vEOS-lab."
+    ]
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyTransceiversManufacturers",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies if all transceivers come from approved manufacturers.",
+    "result": "skipped",
+    "messages": [
+      "VerifyTransceiversManufacturers test is not supported on vEOS-lab."
+    ],
+    "custom_field": "Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "failure",
+    "messages": [
+      "The following interface(s) are not configured: ['Dps1']"
+    ],
+    "custom_field": "Interface Dps1 - DPS Interface = 'up'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Ethernet2 - mpls_r2 = 'up'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Ethernet3 - internet = 'up'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Loopback0 - Router_ID = 'up'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "failure",
+    "messages": [
+      "The following interface(s) are not configured: ['Vxlan1']"
+    ],
+    "custom_field": "Interface Vxlan1 = 'up'"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyRoutingProtocolModel",
+    "categories": [
+      "routing"
+    ],
+    "description": "Verifies the configured routing protocol model.",
+    "result": "success",
+    "custom_field": "Routing protocol model: multi-agent"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "failure",
+    "messages": [
+      "No IPv4 security connection configured for peer `10.99.102.1`."
+    ],
+    "custom_field": "IPv4 Peer: 10.99.102.1 VRF: default"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "failure",
+    "messages": [
+      "No IPv4 security connection configured for peer `10.99.102.2`."
+    ],
+    "custom_field": "IPv4 Peer: 10.99.102.2 VRF: default"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "failure",
+    "messages": [
+      "No IPv4 security connection configured for peer `10.99.102.4`."
+    ],
+    "custom_field": "IPv4 Peer: 10.99.102.4 VRF: default"
+  },
+  {
+    "name": "Pathfinder3",
+    "test": "VerifyNTP",
+    "categories": [
+      "system"
+    ],
+    "description": "Verifies if NTP is synchronised.",
+    "result": "success"
+  }
+]
