@@ -5,8 +5,8 @@ wan_router:
   defaults:
     cv_pathfinder_transit_mode: region
     cv_pathfinder_region: REGION2
-    loopback_ipv4_pool: 10.99.201.0/24
-    vtep_loopback_ipv4_pool: 10.99.202.0/24
+    loopback_ipv4_pool: 10.99.101.0/24
+    vtep_loopback_ipv4_pool: 10.99.102.0/24
     filter:
       always_include_vrfs_in_tenants: [TENANT_A]
   nodes:

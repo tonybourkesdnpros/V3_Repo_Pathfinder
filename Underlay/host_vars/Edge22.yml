@@ -60,6 +60,11 @@ router_bgp:
         - source_protocol: connected
         - source_protocol: ospf
 
+static_routes:
+  - vrf: default
+    destination_address_prefix: 0.0.0.0/0
+    gateway: 22.22.22.1
+
 router_ospf:
   process_ids:
     - id: 10

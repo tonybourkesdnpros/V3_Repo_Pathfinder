@@ -13,7 +13,7 @@
 
 | Total Tests | Total Tests Passed | Total Tests Failed | Total Tests Skipped |
 | ----------- | ------------------ | ------------------ | ------------------- |
-| 368 | 306 | 54 | 8 |
+| 500 | 430 | 62 | 8 |
 
 ### Summary Totals Device Under Test
 
@@ -23,6 +23,10 @@
 | Edge12 | 33 | 31 | 2 | 0 | Hardware | - |
 | Edge13 | 33 | 31 | 2 | 0 | Hardware | - |
 | Edge14 | 33 | 31 | 2 | 0 | Hardware | - |
+| Edge20 | 33 | 31 | 2 | 0 | Hardware | - |
+| Edge22 | 33 | 31 | 2 | 0 | Hardware | - |
+| Edge23 | 33 | 31 | 2 | 0 | Hardware | - |
+| Edge24 | 33 | 31 | 2 | 0 | Hardware | - |
 | Pathfinder1 | 26 | 24 | 2 | 0 | Hardware | - |
 | Pathfinder2 | 26 | 24 | 2 | 0 | Hardware | - |
 | Pathfinder3 | 26 | 5 | 17 | 4 | BGP, Interfaces, Security | Hardware |
@@ -36,13 +40,13 @@
 
 | Test Category | Total Tests | Tests Passed | Tests Failed | Tests Skipped |
 | ------------- | ----------- | ------------ | ------------ | ------------- |
-| BGP | 176 | 152 | 24 | 0 |
-| Hardware | 48 | 20 | 20 | 8 |
-| Interfaces | 60 | 56 | 4 | 0 |
-| Routing | 12 | 12 | 0 | 0 |
-| STUN | 16 | 16 | 0 | 0 |
-| Security | 44 | 38 | 6 | 0 |
-| System | 12 | 12 | 0 | 0 |
+| BGP | 240 | 216 | 24 | 0 |
+| Hardware | 64 | 28 | 28 | 8 |
+| Interfaces | 80 | 76 | 4 | 0 |
+| Routing | 16 | 16 | 0 | 0 |
+| STUN | 24 | 24 | 0 | 0 |
+| Security | 60 | 54 | 6 | 0 |
+| System | 16 | 16 | 0 | 0 |
 
 ## Failed Test Results Summary
 
@@ -56,52 +60,60 @@
 | 85 | Edge13 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
 | 117 | Edge14 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
 | 118 | Edge14 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 146 | Pathfinder1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 147 | Pathfinder1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 172 | Pathfinder2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 173 | Pathfinder2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 185 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 186 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 187 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 188 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 189 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 190 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 191 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 192 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 193 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 194 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 195 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 196 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 201 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
-| 205 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
-| 207 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
-| 208 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
-| 209 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.4'. |
-| 211 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 212 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 213 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 214 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 215 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 216 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 217 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 218 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 219 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 220 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 221 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 222 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 227 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
-| 231 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
-| 233 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
-| 234 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
-| 235 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.3'. |
-| 254 | Transit1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 255 | Transit1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 287 | Transit2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 288 | Transit2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 320 | Transit3 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 321 | Transit3 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 353 | Transit4 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 354 | Transit4 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 150 | Edge20 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 151 | Edge20 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 183 | Edge22 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 184 | Edge22 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 216 | Edge23 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 217 | Edge23 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 249 | Edge24 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 250 | Edge24 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 278 | Pathfinder1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 279 | Pathfinder1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 304 | Pathfinder2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 305 | Pathfinder2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 317 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 318 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 319 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 320 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 321 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 322 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 323 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 324 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 325 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 326 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 327 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 328 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 333 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
+| 337 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
+| 339 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
+| 340 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
+| 341 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.4'. |
+| 343 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 344 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 345 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 346 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 347 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 348 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 349 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 350 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 351 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 352 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 353 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 354 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 359 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
+| 363 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
+| 365 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
+| 366 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
+| 367 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.3'. |
+| 386 | Transit1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 387 | Transit1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 419 | Transit2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 420 | Transit2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 452 | Transit3 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 453 | Transit3 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 485 | Transit4 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 486 | Transit4 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
 
 ## All Test Results
 
@@ -239,239 +251,371 @@
 | 130 | Edge14 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 11.11.14.2 Source Port: 4500 | PASS | - |
 | 131 | Edge14 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.14.2 Source Port: 4500 | PASS | - |
 | 132 | Edge14 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 133 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 134 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 135 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 136 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 137 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 138 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 139 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 140 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 141 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 142 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 143 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 144 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 145 | Pathfinder1 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
-| 146 | Pathfinder1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 147 | Pathfinder1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 148 | Pathfinder1 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
-| 149 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
-| 150 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r1 = 'up' | PASS | - |
-| 151 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
-| 152 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 153 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
-| 154 | Pathfinder1 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 155 | Pathfinder1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
-| 156 | Pathfinder1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
-| 157 | Pathfinder1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
-| 158 | Pathfinder1 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 159 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 160 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 161 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 162 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 163 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 164 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 165 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 166 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 167 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 168 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 169 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 170 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 171 | Pathfinder2 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
-| 172 | Pathfinder2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 173 | Pathfinder2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 174 | Pathfinder2 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
-| 175 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
-| 176 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r1 = 'up' | PASS | - |
-| 177 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
-| 178 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 179 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
-| 180 | Pathfinder2 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 181 | Pathfinder2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
-| 182 | Pathfinder2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
-| 183 | Pathfinder2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
-| 184 | Pathfinder2 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 185 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 186 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 187 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 188 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 189 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 190 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 191 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 192 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 193 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 194 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 195 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 196 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
-| 197 | Pathfinder3 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on vEOS-lab. |
-| 198 | Pathfinder3 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on vEOS-lab. |
-| 199 | Pathfinder3 | Hardware | VerifyTemperature | Verifies the device temperature. | - | SKIPPED | VerifyTemperature test is not supported on vEOS-lab. |
-| 200 | Pathfinder3 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | SKIPPED | VerifyTransceiversManufacturers test is not supported on vEOS-lab. |
-| 201 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
-| 202 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
-| 203 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
-| 204 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 205 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
-| 206 | Pathfinder3 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 207 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
-| 208 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
-| 209 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.4'. |
-| 210 | Pathfinder3 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 211 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 212 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 213 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 214 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 215 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 216 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 217 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 218 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 219 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 220 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
-| 221 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
-| 222 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
-| 223 | Pathfinder4 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on vEOS-lab. |
-| 224 | Pathfinder4 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on vEOS-lab. |
-| 225 | Pathfinder4 | Hardware | VerifyTemperature | Verifies the device temperature. | - | SKIPPED | VerifyTemperature test is not supported on vEOS-lab. |
-| 226 | Pathfinder4 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | SKIPPED | VerifyTransceiversManufacturers test is not supported on vEOS-lab. |
-| 227 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
-| 228 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
-| 229 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
-| 230 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 231 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
-| 232 | Pathfinder4 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 233 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
-| 234 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
-| 235 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.3'. |
-| 236 | Pathfinder4 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 237 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 238 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 239 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 240 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 241 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 242 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 243 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 244 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 245 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 246 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 247 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 248 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 249 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 250 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 251 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 252 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 253 | Transit1 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
-| 254 | Transit1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 255 | Transit1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 256 | Transit1 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
-| 257 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
-| 258 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r1 = 'up' | PASS | - |
-| 259 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
-| 260 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 261 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
-| 262 | Transit1 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 263 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
-| 264 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
-| 265 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
-| 266 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
-| 267 | Transit1 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 11.11.51.2 Source Port: 4500 | PASS | - |
-| 268 | Transit1 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.51.2 Source Port: 4500 | PASS | - |
-| 269 | Transit1 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 270 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 271 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 272 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 273 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 274 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 275 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 276 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 277 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 278 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 279 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 280 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 281 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 282 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 283 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 284 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 285 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 286 | Transit2 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
-| 287 | Transit2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 288 | Transit2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 289 | Transit2 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
-| 290 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
-| 291 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - internet = 'up' | PASS | - |
-| 292 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - mpls_r1 = 'up' | PASS | - |
-| 293 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 294 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
-| 295 | Transit2 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 296 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
-| 297 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
-| 298 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
-| 299 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
-| 300 | Transit2 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 11.11.52.2 Source Port: 4500 | PASS | - |
-| 301 | Transit2 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.52.2 Source Port: 4500 | PASS | - |
-| 302 | Transit2 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 303 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 304 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 305 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 306 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 307 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 308 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 309 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 310 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 311 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 312 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 313 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 314 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 315 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 316 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 317 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 318 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 319 | Transit3 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
-| 320 | Transit3 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 321 | Transit3 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 322 | Transit3 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
-| 323 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
-| 324 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
-| 325 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
-| 326 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 327 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
-| 328 | Transit3 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 329 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
-| 330 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
-| 331 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
-| 332 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
-| 333 | Transit3 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.53.2 Source Port: 4500 | PASS | - |
-| 334 | Transit3 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.53.2 Source Port: 4500 | PASS | - |
-| 335 | Transit3 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
-| 336 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 337 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 338 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 339 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 340 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 341 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 342 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 343 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 344 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 345 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 346 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 347 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 348 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
-| 349 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
-| 350 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
-| 351 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
-| 352 | Transit4 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
-| 353 | Transit4 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
-| 354 | Transit4 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
-| 355 | Transit4 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
-| 356 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
-| 357 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - internet = 'up' | PASS | - |
-| 358 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - mpls_r2 = 'up' | PASS | - |
-| 359 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
-| 360 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
-| 361 | Transit4 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
-| 362 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
-| 363 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
-| 364 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
-| 365 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
-| 366 | Transit4 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.54.2 Source Port: 4500 | PASS | - |
-| 367 | Transit4 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.54.2 Source Port: 4500 | PASS | - |
-| 368 | Transit4 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 133 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 134 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 135 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 136 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 137 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 138 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 139 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 140 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 141 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 142 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 143 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 144 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 145 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 146 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 147 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 148 | Edge20 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 149 | Edge20 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 150 | Edge20 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 151 | Edge20 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 152 | Edge20 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 153 | Edge20 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 154 | Edge20 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet4 - mpls_r2 = 'up' | PASS | - |
+| 155 | Edge20 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet5 - internet = 'up' | PASS | - |
+| 156 | Edge20 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 157 | Edge20 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 158 | Edge20 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 159 | Edge20 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 160 | Edge20 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 161 | Edge20 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 162 | Edge20 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 163 | Edge20 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.20.2 Source Port: 4500 | PASS | - |
+| 164 | Edge20 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.20.10 Source Port: 4500 | PASS | - |
+| 165 | Edge20 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 166 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 167 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 168 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 169 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 170 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 171 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 172 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 173 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 174 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 175 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 176 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 177 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 178 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 179 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 180 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 181 | Edge22 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 182 | Edge22 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 183 | Edge22 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 184 | Edge22 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 185 | Edge22 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 186 | Edge22 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 187 | Edge22 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
+| 188 | Edge22 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 189 | Edge22 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 190 | Edge22 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 191 | Edge22 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 192 | Edge22 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 193 | Edge22 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 194 | Edge22 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 195 | Edge22 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 196 | Edge22 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.22.2 Source Port: 4500 | PASS | - |
+| 197 | Edge22 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.22.10 Source Port: 4500 | PASS | - |
+| 198 | Edge22 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 199 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 200 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 201 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 202 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 203 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 204 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 205 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 206 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 207 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 208 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 209 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 210 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 211 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 212 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 213 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 214 | Edge23 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 215 | Edge23 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 216 | Edge23 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 217 | Edge23 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 218 | Edge23 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 219 | Edge23 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 220 | Edge23 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
+| 221 | Edge23 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 222 | Edge23 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 223 | Edge23 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 224 | Edge23 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 225 | Edge23 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 226 | Edge23 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 227 | Edge23 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 228 | Edge23 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 229 | Edge23 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.23.2 Source Port: 4500 | PASS | - |
+| 230 | Edge23 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.23.10 Source Port: 4500 | PASS | - |
+| 231 | Edge23 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 232 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 233 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 234 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 235 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 236 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 237 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 238 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 239 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 240 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 241 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 242 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 243 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 244 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 245 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 246 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 247 | Edge24 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 248 | Edge24 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 249 | Edge24 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 250 | Edge24 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 251 | Edge24 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 252 | Edge24 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 253 | Edge24 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
+| 254 | Edge24 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 255 | Edge24 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 256 | Edge24 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 257 | Edge24 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 258 | Edge24 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 259 | Edge24 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 260 | Edge24 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 261 | Edge24 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 262 | Edge24 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.24.2 Source Port: 4500 | PASS | - |
+| 263 | Edge24 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.24.10 Source Port: 4500 | PASS | - |
+| 264 | Edge24 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 265 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 266 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 267 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 268 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 269 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 270 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 271 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 272 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 273 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 274 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 275 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 276 | Pathfinder1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 277 | Pathfinder1 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 278 | Pathfinder1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 279 | Pathfinder1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 280 | Pathfinder1 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 281 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 282 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r1 = 'up' | PASS | - |
+| 283 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 284 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 285 | Pathfinder1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 286 | Pathfinder1 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 287 | Pathfinder1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 288 | Pathfinder1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 289 | Pathfinder1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 290 | Pathfinder1 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 291 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 292 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 293 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 294 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 295 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 296 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 297 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 298 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 299 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 300 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 301 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 302 | Pathfinder2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 303 | Pathfinder2 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 304 | Pathfinder2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 305 | Pathfinder2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 306 | Pathfinder2 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 307 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 308 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r1 = 'up' | PASS | - |
+| 309 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 310 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 311 | Pathfinder2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 312 | Pathfinder2 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 313 | Pathfinder2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 314 | Pathfinder2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 315 | Pathfinder2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 316 | Pathfinder2 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 317 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 318 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 319 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 320 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 321 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 322 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 323 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 324 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 325 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 326 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 327 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 328 | Pathfinder3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.4': {'peerNotFound': True}}}}] |
+| 329 | Pathfinder3 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on vEOS-lab. |
+| 330 | Pathfinder3 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on vEOS-lab. |
+| 331 | Pathfinder3 | Hardware | VerifyTemperature | Verifies the device temperature. | - | SKIPPED | VerifyTemperature test is not supported on vEOS-lab. |
+| 332 | Pathfinder3 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | SKIPPED | VerifyTransceiversManufacturers test is not supported on vEOS-lab. |
+| 333 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
+| 334 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
+| 335 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 336 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 337 | Pathfinder3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
+| 338 | Pathfinder3 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 339 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
+| 340 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
+| 341 | Pathfinder3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.4'. |
+| 342 | Pathfinder3 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 343 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 344 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 345 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'evpn', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 346 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 347 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 348 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'ipv4', 'safi': 'sr-te', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 349 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 350 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 351 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'link-state', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 352 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.1': {'peerNotFound': True}}}}] |
+| 353 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.2': {'peerNotFound': True}}}}] |
+| 354 | Pathfinder4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | FAIL | Failures: [{'afi': 'path-selection', 'vrfs': {'default': {'10.99.102.3': {'peerNotFound': True}}}}] |
+| 355 | Pathfinder4 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentCooling test is not supported on vEOS-lab. |
+| 356 | Pathfinder4 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | SKIPPED | VerifyEnvironmentPower test is not supported on vEOS-lab. |
+| 357 | Pathfinder4 | Hardware | VerifyTemperature | Verifies the device temperature. | - | SKIPPED | VerifyTemperature test is not supported on vEOS-lab. |
+| 358 | Pathfinder4 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | SKIPPED | VerifyTransceiversManufacturers test is not supported on vEOS-lab. |
+| 359 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | FAIL | The following interface(s) are not configured: ['Dps1'] |
+| 360 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
+| 361 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 362 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 363 | Pathfinder4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | FAIL | The following interface(s) are not configured: ['Vxlan1'] |
+| 364 | Pathfinder4 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 365 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.1'. |
+| 366 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.2'. |
+| 367 | Pathfinder4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | FAIL | No IPv4 security connection configured for peer '10.99.102.3'. |
+| 368 | Pathfinder4 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 369 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 370 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 371 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 372 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 373 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 374 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 375 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 376 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 377 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 378 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 379 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 380 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 381 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 382 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 383 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 384 | Transit1 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 385 | Transit1 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 386 | Transit1 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 387 | Transit1 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 388 | Transit1 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 389 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 390 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r1 = 'up' | PASS | - |
+| 391 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 392 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 393 | Transit1 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 394 | Transit1 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 395 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 396 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 397 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 398 | Transit1 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 399 | Transit1 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 11.11.51.2 Source Port: 4500 | PASS | - |
+| 400 | Transit1 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.51.2 Source Port: 4500 | PASS | - |
+| 401 | Transit1 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 402 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 403 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 404 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 405 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 406 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 407 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 408 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 409 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 410 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 411 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 412 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 413 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 414 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 415 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 416 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 417 | Transit2 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 418 | Transit2 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 419 | Transit2 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 420 | Transit2 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 421 | Transit2 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 422 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 423 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - internet = 'up' | PASS | - |
+| 424 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - mpls_r1 = 'up' | PASS | - |
+| 425 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 426 | Transit2 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 427 | Transit2 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 428 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 429 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 430 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 431 | Transit2 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 432 | Transit2 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 11.11.52.2 Source Port: 4500 | PASS | - |
+| 433 | Transit2 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.52.2 Source Port: 4500 | PASS | - |
+| 434 | Transit2 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 435 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 436 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 437 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 438 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 439 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 440 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 441 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 442 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 443 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 444 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 445 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 446 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 447 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 448 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 449 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 450 | Transit3 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 451 | Transit3 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 452 | Transit3 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 453 | Transit3 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 454 | Transit3 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 455 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 456 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - mpls_r2 = 'up' | PASS | - |
+| 457 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - internet = 'up' | PASS | - |
+| 458 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 459 | Transit3 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 460 | Transit3 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 461 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 462 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 463 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 464 | Transit3 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 465 | Transit3 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.53.2 Source Port: 4500 | PASS | - |
+| 466 | Transit3 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.53.2 Source Port: 4500 | PASS | - |
+| 467 | Transit3 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |
+| 468 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 469 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 470 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 471 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 472 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 473 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 474 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 475 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 476 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 477 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 478 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 479 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 480 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1) | PASS | - |
+| 481 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2) | PASS | - |
+| 482 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3) | PASS | - |
+| 483 | Transit4 | BGP | VerifyBGPSpecificPeers | Verifies the health of specific BGP peer(s). | BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4) | PASS | - |
+| 484 | Transit4 | Hardware | VerifyEnvironmentCooling | Verifies the status of power supply fans and all fan trays. | Accepted States: 'ok' | PASS | - |
+| 485 | Transit4 | Hardware | VerifyEnvironmentPower | Verifies the power supplies status. | Accepted States: 'ok' | FAIL | ValueError: "AntaCommand" object has no field "failed" |
+| 486 | Transit4 | Hardware | VerifyTemperature | Verifies the device temperature. | - | FAIL | Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel' |
+| 487 | Transit4 | Hardware | VerifyTransceiversManufacturers | Verifies if all transceivers come from approved manufacturers. | Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present' | PASS | - |
+| 488 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Dps1 - DPS Interface = 'up' | PASS | - |
+| 489 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet2 - internet = 'up' | PASS | - |
+| 490 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Ethernet3 - mpls_r2 = 'up' | PASS | - |
+| 491 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Loopback0 - Router_ID = 'up' | PASS | - |
+| 492 | Transit4 | Interfaces | VerifyInterfacesStatus | Verifies the status of the provided interfaces. | Interface Vxlan1 = 'up' | PASS | - |
+| 493 | Transit4 | Routing | VerifyRoutingProtocolModel | Verifies the configured routing protocol model. | Routing protocol model: multi-agent | PASS | - |
+| 494 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.1 VRF: default | PASS | - |
+| 495 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.2 VRF: default | PASS | - |
+| 496 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.3 VRF: default | PASS | - |
+| 497 | Transit4 | Security | VerifySpecificIPSecConn | Verifies IPv4 security connections for a peer. | IPv4 Peer: 10.99.102.4 VRF: default | PASS | - |
+| 498 | Transit4 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 172.16.54.2 Source Port: 4500 | PASS | - |
+| 499 | Transit4 | STUN | VerifyStunClient | Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided. | Source IPv4 Address: 22.22.54.2 Source Port: 4500 | PASS | - |
+| 500 | Transit4 | System | VerifyNTP | Verifies if NTP is synchronised. | - | PASS | - |

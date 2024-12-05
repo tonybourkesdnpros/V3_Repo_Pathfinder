@@ -23,61 +23,59 @@ all:
       children:
         TENANT_AVTS:
           children:
-            REGIONS:
+            REGION1:
               children:
-                REGION1:
+                REGION1_PATHFINDERS:
+                  hosts:
+                    Pathfinder1:
+                      ansible_host: 192.168.0.71
+                    Pathfinder2:
+                      ansible_host: 192.168.0.72
+                REGION1_EDGE:
                   children:
-                    REGION1_PATHFINDERS:
+                    SITE11:
                       hosts:
-                        Pathfinder1:
-                          ansible_host: 192.168.0.71
-                        Pathfinder2:
-                          ansible_host: 192.168.0.72
-                    REGION1_EDGE:
-                      children:
-                        SITE11:
-                          hosts:
-                            Edge10:
-                        SITE12:
-                          hosts: 
-                            Edge12:
-                        SITE13:
-                          hosts:
-                            Edge13:
-                        SITE14:
-                          hosts:
-                            Edge14:
-                        REGION1_TRANSIT:
-                          hosts:
-                            Transit1:
-                              ansible_host: 192.168.0.51
-                            Transit2:
-                              ansible_host: 192.168.0.52
-                REGION2:
+                        Edge10:
+                    SITE12:
+                      hosts: 
+                        Edge12:
+                    SITE13:
+                      hosts:
+                        Edge13:
+                    SITE14:
+                      hosts:
+                        Edge14:
+                    REGION1_TRANSIT:
+                      hosts:
+                        Transit1:
+                          ansible_host: 192.168.0.51
+                        Transit2:
+                          ansible_host: 192.168.0.52
+            REGION2:
+              children:
+                REGION2_PATHFINDERS:
+                  hosts:
+                    Pathfinder3:
+                      ansible_host: 192.168.0.73
+                    Pathfinder4:
+                      ansible_host: 192.168.0.74
+                REGION2_EDGE:
                   children:
-                    REGION2_PATHFINDERS:
+                    SITE21:
                       hosts:
-                        Pathfinder3:
-                          ansible_host: 192.168.0.73
-                        Pathfinder4:
-                          ansible_host: 192.168.0.74
-                    REGION2_EDGE:
-                      children:
-                        SITE21:
-                          hosts:
-                            Edge20:
-                        SITE22:
-                          hosts: 
-                            Edge22:
-                        SITE23:
-                          hosts:
-                            Edge23:
-                        SITE24:
-                          hosts:
-                            Edge24:
-                        REGION2_TRANSIT:
-                          hosts:
-                            Transit3:
-                              ansible_host: 192.168.0.53
-                            Transit4:
-                              ansible_host: 192.168.0.54
+                        Edge20:
+                    SITE22:
+                      hosts: 
+                        Edge22:
+                    SITE23:
+                      hosts:
+                        Edge23:
+                    SITE24:
+                      hosts:
+                        Edge24:
+                    REGION2_TRANSIT:
+                      hosts:
+                        Transit3:
+                          ansible_host: 192.168.0.53
+                        Transit4:
+                          ansible_host: 192.168.0.54

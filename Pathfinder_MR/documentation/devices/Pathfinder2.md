@@ -492,8 +492,8 @@ ASN Notation: asplain
 
 | Prefix | Peer-ID Include Router ID | Peer Group | Peer-Filter | Remote-AS | VRF |
 | ------ | ------------------------- | ---------- | ----------- | --------- | --- |
+| 10.99.101.0/24 | - | WAN-OVERLAY-PEERS | - | 65000 | default |
 | 10.99.102.0/24 | - | WAN-OVERLAY-PEERS | - | 65000 | default |
-| 10.99.202.0/24 | - | WAN-OVERLAY-PEERS | - | 65000 | default |
 
 #### Router BGP Peer Groups
 
@@ -593,8 +593,8 @@ router bgp 65000
    maximum-paths 16
    no bgp default ipv4-unicast
    bgp cluster-id 10.99.101.2
+   bgp listen range 10.99.101.0/24 peer-group WAN-OVERLAY-PEERS remote-as 65000
    bgp listen range 10.99.102.0/24 peer-group WAN-OVERLAY-PEERS remote-as 65000
-   bgp listen range 10.99.202.0/24 peer-group WAN-OVERLAY-PEERS remote-as 65000
    neighbor WAN-OVERLAY-PEERS peer group
    neighbor WAN-OVERLAY-PEERS remote-as 65000
    neighbor WAN-OVERLAY-PEERS update-source Dps1

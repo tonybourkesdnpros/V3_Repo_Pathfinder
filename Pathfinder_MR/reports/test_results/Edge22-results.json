@@ -1,0 +1,336 @@
+[
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP EVPN Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP EVPN Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP EVPN Peer: Pathfinder3 (IP: 10.99.102.3)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP EVPN Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder3 (IP: 10.99.102.3)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP IPv4 SR-TE Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Link-State Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Link-State Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Link-State Peer: Pathfinder3 (IP: 10.99.102.3)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Link-State Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Path-Selection Peer: Pathfinder1 (IP: 10.99.102.1)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Path-Selection Peer: Pathfinder2 (IP: 10.99.102.2)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Path-Selection Peer: Pathfinder3 (IP: 10.99.102.3)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s).",
+    "result": "success",
+    "custom_field": "BGP Path-Selection Peer: Pathfinder4 (IP: 10.99.102.4)"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyEnvironmentCooling",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies the status of power supply fans and all fan trays.",
+    "result": "success",
+    "custom_field": "Accepted States: 'ok'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyEnvironmentPower",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies the power supplies status.",
+    "result": "error",
+    "messages": [
+      "ValueError: \"AntaCommand\" object has no field \"failed\""
+    ],
+    "custom_field": "Accepted States: 'ok'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyTemperature",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies the device temperature.",
+    "result": "failure",
+    "messages": [
+      "Device temperature exceeds acceptable limits. Current system status: 'unknownTemperatureAlarmLevel'"
+    ]
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyTransceiversManufacturers",
+    "categories": [
+      "hardware"
+    ],
+    "description": "Verifies if all transceivers come from approved manufacturers.",
+    "result": "success",
+    "custom_field": "Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Dps1 - DPS Interface = 'up'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Ethernet2 - mpls_r2 = 'up'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Ethernet3 - internet = 'up'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Loopback0 - Router_ID = 'up'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Vxlan1 = 'up'"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyRoutingProtocolModel",
+    "categories": [
+      "routing"
+    ],
+    "description": "Verifies the configured routing protocol model.",
+    "result": "success",
+    "custom_field": "Routing protocol model: multi-agent"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "success",
+    "custom_field": "IPv4 Peer: 10.99.102.1 VRF: default"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "success",
+    "custom_field": "IPv4 Peer: 10.99.102.2 VRF: default"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "success",
+    "custom_field": "IPv4 Peer: 10.99.102.3 VRF: default"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifySpecificIPSecConn",
+    "categories": [
+      "security"
+    ],
+    "description": "Verifies IPv4 security connections for a peer.",
+    "result": "success",
+    "custom_field": "IPv4 Peer: 10.99.102.4 VRF: default"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyStunClient",
+    "categories": [
+      "stun"
+    ],
+    "description": "Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided.",
+    "result": "success",
+    "custom_field": "Source IPv4 Address: 172.16.22.2 Source Port: 4500"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyStunClient",
+    "categories": [
+      "stun"
+    ],
+    "description": "Verifies the STUN client is configured with the specified IPv4 source address and port. Validate the public IP and port if provided.",
+    "result": "success",
+    "custom_field": "Source IPv4 Address: 22.22.22.10 Source Port: 4500"
+  },
+  {
+    "name": "Edge22",
+    "test": "VerifyNTP",
+    "categories": [
+      "system"
+    ],
+    "description": "Verifies if NTP is synchronised.",
+    "result": "success"
+  }
+]

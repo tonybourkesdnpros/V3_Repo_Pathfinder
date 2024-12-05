@@ -2,7 +2,7 @@ hostname: Transit4
 is_deployed: true
 router_bgp:
   as: '65000'
-  router_id: 10.99.201.54
+  router_id: 10.99.101.54
   bgp:
     default:
       ipv4_unicast: false
@@ -73,7 +73,7 @@ router_bgp:
     description: Pathfinder4
   vrfs:
   - name: default
-    rd: 10.99.201.54:101
+    rd: 10.99.101.54:101
     route_targets:
       import:
       - address_family: evpn
@@ -85,8 +85,8 @@ router_bgp:
         - 65000:101
         - route-map RM-EVPN-EXPORT-VRF-DEFAULT
   - name: VRF_A
-    router_id: 10.99.201.54
-    rd: 10.99.201.54:102
+    router_id: 10.99.101.54
+    rd: 10.99.101.54:102
     route_targets:
       import:
       - address_family: evpn
@@ -134,12 +134,12 @@ loopback_interfaces:
 - name: Loopback0
   description: Router_ID
   shutdown: false
-  ip_address: 10.99.201.54/32
+  ip_address: 10.99.101.54/32
 prefix_lists:
 - name: PL-LOOPBACKS-EVPN-OVERLAY
   sequence_numbers:
   - sequence: 10
-    action: permit 10.99.201.0/24 eq 32
+    action: permit 10.99.101.0/24 eq 32
 route_maps:
 - name: RM-CONN-2-BGP
   sequence_numbers:
@@ -148,7 +148,7 @@ route_maps:
     match:
     - ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
     set:
-    - extcommunity soo 10.99.201.54:299 additive
+    - extcommunity soo 10.99.101.54:299 additive
 - name: RM-EVPN-SOO-IN
   sequence_numbers:
   - sequence: 10
@@ -162,7 +162,7 @@ route_maps:
   - sequence: 10
     type: permit
     set:
-    - extcommunity soo 10.99.201.54:299 additive
+    - extcommunity soo 10.99.101.54:299 additive
 - name: RM-EVPN-EXPORT-VRF-DEFAULT
   sequence_numbers:
   - sequence: 10
@@ -178,11 +178,11 @@ ip_extcommunity_lists:
 - name: ECL-EVPN-SOO
   entries:
   - type: permit
-    extcommunities: soo 10.99.201.54:299
+    extcommunities: soo 10.99.101.54:299
 ip_security:
   ike_policies:
   - name: CP-IKE-POLICY
-    local_id: 10.99.202.54
+    local_id: 10.99.102.54
   sa_policies:
   - name: DP-SA-POLICY
     esp:
@@ -382,7 +382,7 @@ dps_interfaces:
 - name: Dps1
   description: DPS Interface
   mtu: 9214
-  ip_address: 10.99.202.54/32
+  ip_address: 10.99.102.54/32
   flow_tracker:
     hardware: FLOW-TRACKER
 vxlan_interface:
@@ -437,7 +437,7 @@ metadata:
   cv_pathfinder:
     role: transit region
     ssl_profile: STUN-DTLS
-    vtep_ip: 10.99.202.54
+    vtep_ip: 10.99.102.54
     region: REGION2
     zone: REGION2-ZONE
     site: TRANSIT2

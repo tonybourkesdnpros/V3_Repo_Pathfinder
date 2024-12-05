@@ -228,7 +228,7 @@ spanning-tree mode none
 
 | Policy name | IKE lifetime | Encryption | DH group | Local ID |
 | ----------- | ------------ | ---------- | -------- | -------- |
-| CP-IKE-POLICY | - | - | - | 10.99.202.23 |
+| CP-IKE-POLICY | - | - | - | 10.99.102.23 |
 
 ### Security Association policies
 
@@ -257,7 +257,7 @@ spanning-tree mode none
 ip security
    !
    ike policy CP-IKE-POLICY
-      local-id 10.99.202.23
+      local-id 10.99.102.23
    !
    sa policy DP-SA-POLICY
       esp encryption aes256gcm128
@@ -294,7 +294,7 @@ ip security
 
 | Interface | IP address | Shutdown | MTU | Flow tracker(s) | TCP MSS Ceiling |
 | --------- | ---------- | -------- | --- | --------------- | --------------- |
-| Dps1 | 10.99.202.23/32 | - | 9214 | Hardware: FLOW-TRACKER |  |
+| Dps1 | 10.99.102.23/32 | - | 9214 | Hardware: FLOW-TRACKER |  |
 
 #### DPS Interfaces Device Configuration
 
@@ -304,7 +304,7 @@ interface Dps1
    description DPS Interface
    mtu 9214
    flow tracker hardware FLOW-TRACKER
-   ip address 10.99.202.23/32
+   ip address 10.99.102.23/32
 ```
 
 ### Ethernet Interfaces
@@ -323,7 +323,7 @@ interface Dps1
 | Interface | Description | Type | Channel Group | IP Address | VRF |  MTU | Shutdown | ACL In | ACL Out |
 | --------- | ----------- | -----| ------------- | ---------- | ----| ---- | -------- | ------ | ------- |
 | Ethernet2 | mpls_r2 | routed | - | 172.16.23.2/24 | default | - | False | - | - |
-| Ethernet3 | internet | routed | - | dhcp | default | - | False | - | - |
+| Ethernet3 | internet | routed | - | 22.22.23.10/24 | default | - | False | - | - |
 
 ##### IP NAT: Interfaces configured via profile
 
@@ -347,8 +347,7 @@ interface Ethernet3
    no shutdown
    no switchport
    flow tracker hardware FLOW-TRACKER
-   ip address dhcp
-   dhcp client accept default-route
+   ip address 22.22.23.10/24
    ip nat service-profile NAT-IE-DIRECT
 ```
 
@@ -360,7 +359,7 @@ interface Ethernet3
 
 | Interface | Description | VRF | IP Address |
 | --------- | ----------- | --- | ---------- |
-| Loopback0 | Router_ID | default | 10.99.201.23/32 |
+| Loopback0 | Router_ID | default | 10.99.101.23/32 |
 
 ##### IPv6
 
@@ -375,7 +374,7 @@ interface Ethernet3
 interface Loopback0
    description Router_ID
    no shutdown
-   ip address 10.99.201.23/32
+   ip address 10.99.101.23/32
 ```
 
 ### VXLAN Interface
@@ -588,7 +587,7 @@ ASN Notation: asplain
 
 | BGP AS | Router ID |
 | ------ | --------- |
-| 65000 | 10.99.201.23 |
+| 65000 | 10.99.101.23 |
 
 | BGP Tuning |
 | ---------- |
@@ -661,15 +660,15 @@ ASN Notation: asplain
 
 | VRF | Route-Distinguisher | Redistribute |
 | --- | ------------------- | ------------ |
-| default | 10.99.201.23:101 | - |
-| VRF_A | 10.99.201.23:102 | connected |
+| default | 10.99.101.23:101 | - |
+| VRF_A | 10.99.101.23:102 | connected |
 
 #### Router BGP Device Configuration
 
 ```eos
 !
 router bgp 65000
-   router-id 10.99.201.23
+   router-id 10.99.101.23
    maximum-paths 16
    no bgp default ipv4-unicast
    neighbor WAN-OVERLAY-PEERS peer group
@@ -711,16 +710,16 @@ router bgp 65000
       neighbor WAN-OVERLAY-PEERS activate
    !
    vrf default
-      rd 10.99.201.23:101
+      rd 10.99.101.23:101
       route-target import evpn 65000:101
       route-target export evpn 65000:101
       route-target export evpn route-map RM-EVPN-EXPORT-VRF-DEFAULT
    !
    vrf VRF_A
-      rd 10.99.201.23:102
+      rd 10.99.101.23:102
       route-target import evpn 65000:102
       route-target export evpn 65000:102
-      router-id 10.99.201.23
+      router-id 10.99.101.23
       redistribute connected
 ```
 
@@ -752,14 +751,14 @@ router bfd
 
 | Sequence | Action |
 | -------- | ------ |
-| 10 | permit 10.99.201.0/24 eq 32 |
+| 10 | permit 10.99.101.0/24 eq 32 |
 
 #### Prefix-lists Device Configuration
 
 ```eos
 !
 ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
-   seq 10 permit 10.99.201.0/24 eq 32
+   seq 10 permit 10.99.101.0/24 eq 32
 ```
 
 ### Route-maps
@@ -770,7 +769,7 @@ ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
 
 | Sequence | Type | Match | Set | Sub-Route-Map | Continue |
 | -------- | ---- | ----- | --- | ------------- | -------- |
-| 10 | permit | ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY | extcommunity soo 10.99.201.23:203 additive | - | - |
+| 10 | permit | ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY | extcommunity soo 10.99.101.23:203 additive | - | - |
 
 ##### RM-EVPN-EXPORT-VRF-DEFAULT
 
@@ -789,7 +788,7 @@ ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
 
 | Sequence | Type | Match | Set | Sub-Route-Map | Continue |
 | -------- | ---- | ----- | --- | ------------- | -------- |
-| 10 | permit | - | extcommunity soo 10.99.201.23:203 additive | - | - |
+| 10 | permit | - | extcommunity soo 10.99.101.23:203 additive | - | - |
 
 #### Route-maps Device Configuration
 
@@ -797,7 +796,7 @@ ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
 !
 route-map RM-CONN-2-BGP permit 10
    match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
-   set extcommunity soo 10.99.201.23:203 additive
+   set extcommunity soo 10.99.101.23:203 additive
 !
 route-map RM-EVPN-EXPORT-VRF-DEFAULT permit 10
    match extcommunity ECL-EVPN-SOO
@@ -808,7 +807,7 @@ route-map RM-EVPN-SOO-IN deny 10
 route-map RM-EVPN-SOO-IN permit 20
 !
 route-map RM-EVPN-SOO-OUT permit 10
-   set extcommunity soo 10.99.201.23:203 additive
+   set extcommunity soo 10.99.101.23:203 additive
 ```
 
 ### IP Extended Community Lists
@@ -817,13 +816,13 @@ route-map RM-EVPN-SOO-OUT permit 10
 
 | List Name | Type | Extended Communities |
 | --------- | ---- | -------------------- |
-| ECL-EVPN-SOO | permit | soo 10.99.201.23:203 |
+| ECL-EVPN-SOO | permit | soo 10.99.101.23:203 |
 
 #### IP Extended Community Lists Device Configuration
 
 ```eos
 !
-ip extcommunity-list ECL-EVPN-SOO permit soo 10.99.201.23:203
+ip extcommunity-list ECL-EVPN-SOO permit soo 10.99.101.23:203
 ```
 
 ## ACL

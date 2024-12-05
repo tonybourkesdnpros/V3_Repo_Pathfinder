@@ -5,14 +5,14 @@ wan_router:
   defaults:
     cv_pathfinder_transit_mode: region
     cv_pathfinder_region: REGION1
+    loopback_ipv4_pool: 10.99.101.0/24
+    vtep_loopback_ipv4_pool: 10.99.102.0/24
     filter:
       always_include_vrfs_in_tenants: [TENANT_A]
   nodes:
     - name: Transit1
       id: 51
       cv_pathfinder_site: TRANSIT1
-      loopback_ipv4_pool: 10.99.101.0/24
-      vtep_loopback_ipv4_pool: 10.99.102.0/24
       l3_interfaces:
         - name: Ethernet2
           ip_address: 172.16.51.2/24
@@ -31,8 +31,6 @@ wan_router:
     - name: Transit2
       id: 52
       cv_pathfinder_site: TRANSIT1
-      loopback_ipv4_pool: 10.99.101.0/24
-      vtep_loopback_ipv4_pool: 10.99.102.0/24
       l3_interfaces:
         - name: Ethernet2
           ip_address: 11.11.52.2/24

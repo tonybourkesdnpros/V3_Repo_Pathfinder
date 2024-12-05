@@ -2,7 +2,7 @@ hostname: Edge24
 is_deployed: true
 router_bgp:
   as: '65000'
-  router_id: 10.99.201.24
+  router_id: 10.99.101.24
   bgp:
     default:
       ipv4_unicast: false
@@ -73,7 +73,7 @@ router_bgp:
     description: Pathfinder4
   vrfs:
   - name: default
-    rd: 10.99.201.24:101
+    rd: 10.99.101.24:101
     route_targets:
       import:
       - address_family: evpn
@@ -85,8 +85,8 @@ router_bgp:
         - 65000:101
         - route-map RM-EVPN-EXPORT-VRF-DEFAULT
   - name: VRF_A
-    router_id: 10.99.201.24
-    rd: 10.99.201.24:102
+    router_id: 10.99.101.24
+    rd: 10.99.101.24:102
     route_targets:
       import:
       - address_family: evpn
@@ -124,25 +124,24 @@ ethernet_interfaces:
     hardware: FLOW-TRACKER
 - name: Ethernet3
   peer_type: l3_interface
-  ip_address: dhcp
+  ip_address: 22.22.24.10/24
   shutdown: false
   type: routed
   description: internet
   flow_tracker:
     hardware: FLOW-TRACKER
-  dhcp_client_accept_default_route: true
   ip_nat:
     service_profile: NAT-IE-DIRECT
 loopback_interfaces:
 - name: Loopback0
   description: Router_ID
   shutdown: false
-  ip_address: 10.99.201.24/32
+  ip_address: 10.99.101.24/32
 prefix_lists:
 - name: PL-LOOPBACKS-EVPN-OVERLAY
   sequence_numbers:
   - sequence: 10
-    action: permit 10.99.201.0/24 eq 32
+    action: permit 10.99.101.0/24 eq 32
 route_maps:
 - name: RM-CONN-2-BGP
   sequence_numbers:
@@ -151,7 +150,7 @@ route_maps:
     match:
     - ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
     set:
-    - extcommunity soo 10.99.201.24:204 additive
+    - extcommunity soo 10.99.101.24:204 additive
 - name: RM-EVPN-SOO-IN
   sequence_numbers:
   - sequence: 10
@@ -165,7 +164,7 @@ route_maps:
   - sequence: 10
     type: permit
     set:
-    - extcommunity soo 10.99.201.24:204 additive
+    - extcommunity soo 10.99.101.24:204 additive
 - name: RM-EVPN-EXPORT-VRF-DEFAULT
   sequence_numbers:
   - sequence: 10
@@ -181,11 +180,11 @@ ip_extcommunity_lists:
 - name: ECL-EVPN-SOO
   entries:
   - type: permit
-    extcommunities: soo 10.99.201.24:204
+    extcommunities: soo 10.99.101.24:204
 ip_security:
   ike_policies:
   - name: CP-IKE-POLICY
-    local_id: 10.99.202.24
+    local_id: 10.99.102.24
   sa_policies:
   - name: DP-SA-POLICY
     esp:
@@ -424,7 +423,7 @@ dps_interfaces:
 - name: Dps1
   description: DPS Interface
   mtu: 9214
-  ip_address: 10.99.202.24/32
+  ip_address: 10.99.102.24/32
   flow_tracker:
     hardware: FLOW-TRACKER
 vxlan_interface:
@@ -454,7 +453,7 @@ metadata:
     internet_exit_policies: []
     role: transit zone
     ssl_profile: STUN-DTLS
-    vtep_ip: 10.99.202.24
+    vtep_ip: 10.99.102.24
     region: REGION2
     zone: REGION2-ZONE
     site: SITE24

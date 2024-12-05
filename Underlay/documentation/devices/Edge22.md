@@ -11,6 +11,7 @@
 - [Routing](#routing)
   - [IP Routing](#ip-routing)
   - [IPv6 Routing](#ipv6-routing)
+  - [Static Routes](#static-routes)
   - [Router OSPF](#router-ospf)
   - [Router BGP](#router-bgp)
 - [VRF Instances](#vrf-instances)
@@ -130,6 +131,21 @@ ip routing vrf VRF_A
 | --- | --------------- |
 | default | False |
 | VRF_A | false |
+
+### Static Routes
+
+#### Static Routes Summary
+
+| VRF | Destination Prefix | Next Hop IP | Exit interface | Administrative Distance | Tag | Route Name | Metric |
+| --- | ------------------ | ----------- | -------------- | ----------------------- | --- | ---------- | ------ |
+| default | 0.0.0.0/0 | 22.22.22.1 | - | 1 | - | - | - |
+
+#### Static Routes Device Configuration
+
+```eos
+!
+ip route 0.0.0.0/0 22.22.22.1
+```
 
 ### Router OSPF
 

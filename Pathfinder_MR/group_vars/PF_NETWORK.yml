@@ -5,7 +5,6 @@ fabric_name: PF_NETWORK
 
 # This is needed for virtual/containerized EOS
 bgp_update_wait_install: false
-custom_structured_configuration_prefix: "custom_"
 use_anta: true
 
 # Can also be just autovpn
@@ -13,14 +12,15 @@ wan_mode: cv-pathfinder
 
 bgp_as: 65000
 
-
+wan_encapsulation: vxlan
 
 bgp_peer_groups:
   wan_overlay_peers:
     # password: "htm4AZe9mIQOO1uiMuGgYQ=="
     listen_range_prefixes:
+      - 10.99.101.0/24
       - 10.99.102.0/24
-      - 10.99.202.0/24
+
 
 
 wan_route_servers:

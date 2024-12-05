@@ -29,6 +29,11 @@ ethernet_interfaces:
     mtu: 1500
     ip_address: 172.16.24.2/24
 
+static_routes:
+  - vrf: default
+    destination_address_prefix: 0.0.0.0/0
+    gateway: 22.22.24.1
+
 
 router_bgp:
   as: 65000

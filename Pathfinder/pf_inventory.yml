@@ -25,8 +25,6 @@ all:
       children:
         TENANT_AVTS:
           children:
-            REGIONS:
-              children:
                 REGION1:
                   children:
                     REGION1_PATHFINDERS:
